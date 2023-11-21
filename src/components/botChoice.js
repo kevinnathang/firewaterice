@@ -1,9 +1,9 @@
 export default function botChoice(num) {
   if (num === 1) {
-    return "rock";
+    return "fire";
   } else if (num === 2) {
-    return "paper";
+    return "water";
   } else if (num === 3) {
-    return "scissors";
+    return "ice";
   }
 }
