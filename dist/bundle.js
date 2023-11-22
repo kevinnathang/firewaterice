@@ -24,10 +24,22 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `#water,
 #ice,
 #fire {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+  margin: 40px;
+  border: thick solid black;
+  border-radius: 60px;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;;;EAGE,aAAa;EACb,YAAY;AACd","sourcesContent":["#water,\r\n#ice,\r\n#fire {\r\n  height: 100px;\r\n  width: 100px;\r\n}\r\n"],"sourceRoot":""}]);
+
+#container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+* {
+  border: thin solid red;
+}
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;;;EAGE,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,sBAAsB;AACxB","sourcesContent":["#water,\r\n#ice,\r\n#fire {\r\n  height: 200px;\r\n  width: 200px;\r\n  margin: 40px;\r\n  border: thick solid black;\r\n  border-radius: 60px;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -540,10 +552,39 @@ function botChoices() {
 
 /***/ }),
 
-/***/ "./src/components/playerChoice.js":
-/*!****************************************!*\
-  !*** ./src/components/playerChoice.js ***!
-  \****************************************/
+/***/ "./src/components/checkWinner.js":
+/*!***************************************!*\
+  !*** ./src/components/checkWinner.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ checkWinner)
+/* harmony export */ });
+const outcomes = {
+  water: { beats: "fire", losesTo: "ice" },
+  ice: { beats: "water", losesTo: "fire" },
+  fire: { beats: "ice", losesTo: "water" },
+};
+
+function checkWinner(playerChoice, cpuChoice) {
+  if (playerChoice === cpuChoice) {
+    console.log("It's a tie!");
+  } else if (outcomes[playerChoice].beats === cpuChoice) {
+    console.log("You win!");
+  } else {
+    console.log("You lose!");
+  }
+}
+
+
+/***/ }),
+
+/***/ "./src/components/playerChoices.js":
+/*!*****************************************!*\
+  !*** ./src/components/playerChoices.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -556,15 +597,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function playerChoices() {
-  let playerChoice;
+
+function playerChoices(callback) {
+  const container = document.getElementById("container");
+  const imgHolder = document.createElement("div");
+  imgHolder.classList.add("imgHolder");
+  container.appendChild(imgHolder);
 
   const water = new Image();
   water.classList.add("choices");
   water.src = _assets_water_jpg__WEBPACK_IMPORTED_MODULE_0__["default"];
   water.id = "water";
   water.addEventListener("click", function () {
-    playerChoice = "water";
+    callback("water");
   });
 
   const fire = new Image();
@@ -572,7 +617,7 @@ function playerChoices() {
   fire.src = _assets_fire_jpg__WEBPACK_IMPORTED_MODULE_1__["default"];
   fire.id = "fire";
   fire.addEventListener("click", function () {
-    playerChoice = "fire";
+    callback("fire");
   });
 
   const ice = new Image();
@@ -580,16 +625,12 @@ function playerChoices() {
   ice.src = _assets_ice_jpg__WEBPACK_IMPORTED_MODULE_2__["default"];
   ice.id = "ice";
   ice.addEventListener("click", function () {
-    playerChoice = "ice";
+    callback("ice");
   });
 
-  const container = document.getElementById("container");
-  container.appendChild(water);
-  container.appendChild(fire);
-  container.appendChild(ice);
-
-  return playerChoice;
-  console.log(playerChoice);
+  imgHolder.appendChild(water);
+  imgHolder.appendChild(fire);
+  imgHolder.appendChild(ice);
 }
 
 
@@ -711,14 +752,19 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_botChoices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/botChoices.js */ "./src/components/botChoices.js");
-/* harmony import */ var _components_playerChoice_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/playerChoice.js */ "./src/components/playerChoice.js");
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/style.css */ "./src/styles/style.css");
+/* harmony import */ var _components_playerChoices_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/playerChoices.js */ "./src/components/playerChoices.js");
+/* harmony import */ var _components_checkWinner_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/checkWinner.js */ "./src/components/checkWinner.js");
+/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/style.css */ "./src/styles/style.css");
 
 
 
 
-(0,_components_botChoices_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-(0,_components_playerChoice_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+
+function game(choice) {
+  (0,_components_checkWinner_js__WEBPACK_IMPORTED_MODULE_2__["default"])(choice, (0,_components_botChoices_js__WEBPACK_IMPORTED_MODULE_0__["default"])());
+}
+
+(0,_components_playerChoices_js__WEBPACK_IMPORTED_MODULE_1__["default"])(game);
 
 })();
 

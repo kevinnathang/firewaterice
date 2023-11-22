@@ -4,6 +4,9 @@ import iceImg from "../assets/ice.jpg";
 
 export default function playerChoices(callback) {
   const container = document.getElementById("container");
+  const imgHolder = document.createElement("div");
+  imgHolder.classList.add("imgHolder");
+  container.appendChild(imgHolder);
 
   const water = new Image();
   water.classList.add("choices");
@@ -29,7 +32,7 @@ export default function playerChoices(callback) {
     callback("ice");
   });
 
-  container.appendChild(water);
-  container.appendChild(fire);
-  container.appendChild(ice);
+  imgHolder.appendChild(water);
+  imgHolder.appendChild(fire);
+  imgHolder.appendChild(ice);
 }

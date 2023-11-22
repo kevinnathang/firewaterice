@@ -1,6 +1,28 @@
 #water,
 #ice,
 #fire {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+  border: thick solid black;
+  margin: 40px;
+  border-radius: 60px;
+}
+
+#imgHolder {
+  display: flex;
+}
+
+.title {
+  font-size: 80px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  border: thin solid red;
 }
