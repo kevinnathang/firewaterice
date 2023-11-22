@@ -1,21 +1,10 @@
-import rng from "./components/rng.js";
-import botChoice from "./components/botChoice.js";
-import { playerChoice, getChoice } from "./components/playerChoice.js";
+import botChoices from "./components/botChoices.js";
+import playerChoices from "./components/playerChoices.js";
 import checkWinner from "./components/checkWinner.js";
+import "./styles/style.css";
 
-// Set up the event listeners for player's choice
-playerChoice();
+function game(choice) {
+  checkWinner(choice, botChoices());
+}
 
-// Retrieve the player's choice after they've made a selection
-document.addEventListener("click", function (event) {
-  if (event.target.classList.contains("choiceBtns")) {
-    const cpuChoice = botChoice(rng());
-    const humanChoice = getChoice();
-
-    console.log("CPU Choice:", cpuChoice);
-    console.log("Human Choice:", humanChoice);
-
-    // Call checkWinner function here with cpuChoice and humanChoice to determine the winner
-    checkWinner(humanChoice, cpuChoice);
-  }
-});
+playerChoices(game);

@@ -33,6 +33,10 @@ module.exports = {
         test: /\.(png|svg|jpg|gif|jpeg)$/i,
         use: "file-loader",
       },
+      {
+        test: /\.html$/i,
+        use: "html-loader",
+      },
     ],
   },
   plugins: [
