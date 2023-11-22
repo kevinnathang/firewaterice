@@ -1,10 +1,15 @@
 const choiceBtns = document.querySelectorAll(".choiceBtns");
 
-export default function playerChoice(callback) {
+let choice = ""; // Initialize choice as an empty string
+
+export function playerChoice() {
   choiceBtns.forEach((btn) =>
     btn.addEventListener("click", function () {
-      const choice = btn.textContent;
-      callback(choice);
+      choice = btn.textContent.toLowerCase(); // Store the lowercase text content of the clicked button
     })
   );
+}
+
+export function getChoice() {
+  return choice; // Return the current choice
 }
