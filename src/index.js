@@ -2,7 +2,12 @@ import rng from "./components/rng.js";
 import botChoice from "./components/botChoice.js";
 import playerChoice from "./components/playerChoice.js";
 
-const cpuChoice = botChoice(rng());
-const humanChoice = playerChoice();
+// Define a callback function to handle the player's choice
+function handlePlayerChoice(choice) {
+  const cpuChoice = botChoice(rng());
+  console.log("CPU Choice:", cpuChoice);
+  console.log("Human Choice:", choice);
+}
 
-console.log(cpuChoice, humanChoice);
+// Pass the callback function to playerChoice
+playerChoice(handlePlayerChoice);
