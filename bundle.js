@@ -21,11 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `/* Your existing styles */
-
-#water,
-#ice,
-#fire {
+___CSS_LOADER_EXPORT___.push([module.id, `.choices {
   height: 200px;
   width: 200px;
   border: thick solid black;
@@ -34,16 +30,16 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* Your existing styles */
   transition: border-color 0.3s, filter 0.3s;
 }
 
-#water:hover,
-#ice:hover,
-#fire:hover {
+#waterPlayer:hover,
+#icePlayer:hover,
+#firePlayer:hover {
   border-color: blue;
   filter: brightness(70%);
 }
 
 #imgHolder {
   display: flex;
-  margin-top: 1000px;
+  align-items: flex-start;
 }
 
 .title {
@@ -63,10 +59,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* Your existing styles */
 
 .results {
   font-size: 50px;
-  opacity: 0; /* Initially hide the results */
-  transition: opacity 0.3s ease; /* Apply a transition for opacity */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  height: 70px;
+  margin-top: 20px;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA,yBAAyB;;AAEzB;;;EAGE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;EACnB,0CAA0C;AAC5C;;AAEA;;;EAGE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,aAAa;EACb,kBAAkB;AACpB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,eAAe;EACf,UAAU,EAAE,+BAA+B;EAC3C,6BAA6B,EAAE,mCAAmC;AACpE","sourcesContent":["/* Your existing styles */\r\n\r\n#water,\r\n#ice,\r\n#fire {\r\n  height: 200px;\r\n  width: 200px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n  transition: border-color 0.3s, filter 0.3s;\r\n}\r\n\r\n#water:hover,\r\n#ice:hover,\r\n#fire:hover {\r\n  border-color: blue;\r\n  filter: brightness(70%);\r\n}\r\n\r\n#imgHolder {\r\n  display: flex;\r\n  margin-top: 1000px;\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n\r\n.results {\r\n  font-size: 50px;\r\n  opacity: 0; /* Initially hide the results */\r\n  transition: opacity 0.3s ease; /* Apply a transition for opacity */\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;EACnB,0CAA0C;AAC5C;;AAEA;;;EAGE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,6BAA6B;EAC7B,YAAY;EACZ,gBAAgB;AAClB","sourcesContent":[".choices {\r\n  height: 200px;\r\n  width: 200px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n  transition: border-color 0.3s, filter 0.3s;\r\n}\r\n\r\n#waterPlayer:hover,\r\n#icePlayer:hover,\r\n#firePlayer:hover {\r\n  border-color: blue;\r\n  filter: brightness(70%);\r\n}\r\n\r\n#imgHolder {\r\n  display: flex;\r\n  align-items: flex-start;\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n\r\n.results {\r\n  font-size: 50px;\r\n  opacity: 0;\r\n  transition: opacity 0.5s ease;\r\n  height: 70px;\r\n  margin-top: 20px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -565,13 +563,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ botChoices)
 /* harmony export */ });
+/* harmony import */ var _assets_water_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/water.jpg */ "./src/assets/water.jpg");
+/* harmony import */ var _assets_fire_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/fire.jpg */ "./src/assets/fire.jpg");
+/* harmony import */ var _assets_ice_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/ice.jpg */ "./src/assets/ice.jpg");
+
+
+
+
+function genBotPics() {
+  const botChoiceContainer = document.getElementById("botChoiceContainer");
+  const imgHolderBot = document.createElement("div");
+  imgHolderBot.classList.add("imgHolderBot");
+  botChoiceContainer.appendChild(imgHolderBot);
+
+  const water = new Image();
+  water.classList.add("choices");
+  water.src = _assets_water_jpg__WEBPACK_IMPORTED_MODULE_0__["default"];
+  water.id = "water";
+
+  const fire = new Image();
+  fire.classList.add("choices");
+  fire.src = _assets_fire_jpg__WEBPACK_IMPORTED_MODULE_1__["default"];
+  fire.id = "fire";
+
+  const ice = new Image();
+  ice.classList.add("choices");
+  ice.src = _assets_ice_jpg__WEBPACK_IMPORTED_MODULE_2__["default"];
+  ice.id = "ice";
+
+  imgHolderBot.appendChild(water);
+  imgHolderBot.appendChild(fire);
+  imgHolderBot.appendChild(ice);
+}
+genBotPics();
+
 function botChoices() {
+  const fire = document.querySelector("#fire");
+  const water = document.querySelector("#water");
+  const ice = document.querySelector("#ice");
+
+  fire.style.borderColor = "black";
+  water.style.borderColor = "black";
+  ice.style.borderColor = "black";
+
   let num = Math.trunc(Math.random() * 3) + 1;
   if (num === 1) {
+    fire.style.borderColor = "red";
     return "fire";
   } else if (num === 2) {
+    water.style.borderColor = "red";
     return "water";
   } else if (num === 3) {
+    ice.style.borderColor = "red";
     return "ice";
   }
 }
@@ -641,15 +684,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function playerChoices(callback) {
-  const container = document.getElementById("container");
+  const playerChoiceContainer = document.getElementById(
+    "playerChoiceContainer"
+  );
   const imgHolder = document.createElement("div");
   imgHolder.classList.add("imgHolder");
-  container.appendChild(imgHolder);
+  playerChoiceContainer.appendChild(imgHolder);
 
   const water = new Image();
   water.classList.add("choices");
   water.src = _assets_water_jpg__WEBPACK_IMPORTED_MODULE_0__["default"];
-  water.id = "water";
+  water.id = "waterPlayer";
   water.addEventListener("click", function () {
     callback("water");
   });
@@ -657,7 +702,7 @@ function playerChoices(callback) {
   const fire = new Image();
   fire.classList.add("choices");
   fire.src = _assets_fire_jpg__WEBPACK_IMPORTED_MODULE_1__["default"];
-  fire.id = "fire";
+  fire.id = "firePlayer";
   fire.addEventListener("click", function () {
     callback("fire");
   });
@@ -665,7 +710,7 @@ function playerChoices(callback) {
   const ice = new Image();
   ice.classList.add("choices");
   ice.src = _assets_ice_jpg__WEBPACK_IMPORTED_MODULE_2__["default"];
-  ice.id = "ice";
+  ice.id = "icePlayer";
   ice.addEventListener("click", function () {
     callback("ice");
   });
