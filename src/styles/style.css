@@ -1,8 +1,4 @@
-/* Your existing styles */
-
-#water,
-#ice,
-#fire {
+.choices {
   height: 200px;
   width: 200px;
   border: thick solid black;
@@ -11,15 +7,16 @@
   transition: border-color 0.3s, filter 0.3s;
 }
 
-#water:hover,
-#ice:hover,
-#fire:hover {
+#waterPlayer:hover,
+#icePlayer:hover,
+#firePlayer:hover {
   border-color: blue;
   filter: brightness(70%);
 }
 
 #imgHolder {
   display: flex;
+  align-items: flex-start;
 }
 
 .title {
@@ -39,6 +36,8 @@
 
 .results {
   font-size: 50px;
-  opacity: 0; /* Initially hide the results */
-  transition: opacity 0.3s ease; /* Apply a transition for opacity */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  height: 70px;
+  margin-top: 20px;
 }

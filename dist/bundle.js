@@ -21,7 +21,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `#water,
+___CSS_LOADER_EXPORT___.push([module.id, `/* Your existing styles */
+
+#water,
 #ice,
 #fire {
   height: 200px;
@@ -29,10 +31,19 @@ ___CSS_LOADER_EXPORT___.push([module.id, `#water,
   border: thick solid black;
   margin: 40px;
   border-radius: 60px;
+  transition: border-color 0.3s, filter 0.3s;
+}
+
+#water:hover,
+#ice:hover,
+#fire:hover {
+  border-color: blue;
+  filter: brightness(70%);
 }
 
 #imgHolder {
   display: flex;
+  margin-top: 1000px;
 }
 
 .title {
@@ -49,7 +60,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `#water,
 * {
   border: thin solid red;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;;;EAGE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB","sourcesContent":["#water,\r\n#ice,\r\n#fire {\r\n  height: 200px;\r\n  width: 200px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n}\r\n\r\n#imgHolder {\r\n  display: flex;\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n"],"sourceRoot":""}]);
+
+.results {
+  font-size: 50px;
+  opacity: 0; /* Initially hide the results */
+  transition: opacity 0.3s ease; /* Apply a transition for opacity */
+}
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA,yBAAyB;;AAEzB;;;EAGE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;EACnB,0CAA0C;AAC5C;;AAEA;;;EAGE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,aAAa;EACb,kBAAkB;AACpB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,eAAe;EACf,UAAU,EAAE,+BAA+B;EAC3C,6BAA6B,EAAE,mCAAmC;AACpE","sourcesContent":["/* Your existing styles */\r\n\r\n#water,\r\n#ice,\r\n#fire {\r\n  height: 200px;\r\n  width: 200px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n  transition: border-color 0.3s, filter 0.3s;\r\n}\r\n\r\n#water:hover,\r\n#ice:hover,\r\n#fire:hover {\r\n  border-color: blue;\r\n  filter: brightness(70%);\r\n}\r\n\r\n#imgHolder {\r\n  display: flex;\r\n  margin-top: 1000px;\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n\r\n.results {\r\n  font-size: 50px;\r\n  opacity: 0; /* Initially hide the results */\r\n  transition: opacity 0.3s ease; /* Apply a transition for opacity */\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -578,14 +595,29 @@ const outcomes = {
   fire: { beats: "ice", losesTo: "water" },
 };
 
+const results = document.querySelector(".results");
+
 function checkWinner(playerChoice, cpuChoice) {
   if (playerChoice === cpuChoice) {
-    console.log("It's a tie!");
+    showResult("It's a tie!");
   } else if (outcomes[playerChoice].beats === cpuChoice) {
-    console.log("You win!");
+    const capitalizedPlayerChoice =
+      playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
+    showResult(`You win! ${capitalizedPlayerChoice} beats ${cpuChoice}!`);
   } else {
-    console.log("You lose!");
+    const capitalizedCpuChoice =
+      cpuChoice.charAt(0).toUpperCase() + cpuChoice.slice(1);
+    showResult(`You lose! ${capitalizedCpuChoice} beats ${playerChoice}!`);
   }
+}
+
+function showResult(message) {
+  results.style.opacity = "0";
+
+  setTimeout(function () {
+    results.textContent = message;
+    results.style.opacity = "1";
+  }, 300);
 }
 
 

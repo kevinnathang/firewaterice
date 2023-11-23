@@ -11,7 +11,7 @@ export default function playerChoices(callback) {
   const water = new Image();
   water.classList.add("choices");
   water.src = waterImg;
-  water.id = "water";
+  water.id = "waterPlayer";
   water.addEventListener("click", function () {
     callback("water");
   });
@@ -19,7 +19,7 @@ export default function playerChoices(callback) {
   const fire = new Image();
   fire.classList.add("choices");
   fire.src = fireImg;
-  fire.id = "fire";
+  fire.id = "firePlayer";
   fire.addEventListener("click", function () {
     callback("fire");
   });
@@ -27,7 +27,7 @@ export default function playerChoices(callback) {
   const ice = new Image();
   ice.classList.add("choices");
   ice.src = iceImg;
-  ice.id = "ice";
+  ice.id = "icePlayer";
   ice.addEventListener("click", function () {
     callback("ice");
   });
