@@ -26,20 +26,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, `#water,
 #fire {
   height: 200px;
   width: 200px;
-  margin: 40px;
   border: thick solid black;
+  margin: 40px;
   border-radius: 60px;
+}
+
+#imgHolder {
+  display: flex;
+}
+
+.title {
+  font-size: 80px;
 }
 
 #container {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 * {
   border: thin solid red;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;;;EAGE,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,6BAA6B;AAC/B;;AAEA;EACE,sBAAsB;AACxB","sourcesContent":["#water,\r\n#ice,\r\n#fire {\r\n  height: 200px;\r\n  width: 200px;\r\n  margin: 40px;\r\n  border: thick solid black;\r\n  border-radius: 60px;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;;;EAGE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB","sourcesContent":["#water,\r\n#ice,\r\n#fire {\r\n  height: 200px;\r\n  width: 200px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n}\r\n\r\n#imgHolder {\r\n  display: flex;\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -1,3 +1,5 @@
+/* Your existing styles */
+
 #water,
 #ice,
 #fire {
@@ -6,6 +8,14 @@
   border: thick solid black;
   margin: 40px;
   border-radius: 60px;
+  transition: border-color 0.3s, filter 0.3s;
+}
+
+#water:hover,
+#ice:hover,
+#fire:hover {
+  border-color: blue;
+  filter: brightness(70%);
 }
 
 #imgHolder {
@@ -25,4 +35,8 @@
 
 * {
   border: thin solid red;
+}
+
+.results {
+  font-size: 50px;
 }

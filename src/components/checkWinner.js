@@ -4,12 +4,14 @@ const outcomes = {
   fire: { beats: "ice", losesTo: "water" },
 };
 
+const results = document.querySelector(".results");
+
 export default function checkWinner(playerChoice, cpuChoice) {
   if (playerChoice === cpuChoice) {
-    console.log("It's a tie!");
+    results.textContent = "It's a tie!";
   } else if (outcomes[playerChoice].beats === cpuChoice) {
-    console.log("You win!");
+    results.textContent = `You win! ${playerChoice} beats ${cpuChoice}!`;
   } else {
-    console.log("You lose!");
+    results.textContent = `You lose! ${cpuChoice} beats ${playerChoice}!`;
   }
 }
