@@ -39,4 +39,6 @@
 
 .results {
   font-size: 50px;
+  opacity: 0; /* Initially hide the results */
+  transition: opacity 0.3s ease; /* Apply a transition for opacity */
 }

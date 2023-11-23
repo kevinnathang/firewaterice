@@ -8,10 +8,23 @@ const results = document.querySelector(".results");
 
 export default function checkWinner(playerChoice, cpuChoice) {
   if (playerChoice === cpuChoice) {
-    results.textContent = "It's a tie!";
+    showResult("It's a tie!");
   } else if (outcomes[playerChoice].beats === cpuChoice) {
-    results.textContent = `You win! ${playerChoice} beats ${cpuChoice}!`;
+    const capitalizedPlayerChoice =
+      playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
+    showResult(`You win! ${capitalizedPlayerChoice} beats ${cpuChoice}!`);
   } else {
-    results.textContent = `You lose! ${cpuChoice} beats ${playerChoice}!`;
+    const capitalizedCpuChoice =
+      cpuChoice.charAt(0).toUpperCase() + cpuChoice.slice(1);
+    showResult(`You lose! ${capitalizedCpuChoice} beats ${playerChoice}!`);
   }
+}
+
+function showResult(message) {
+  results.style.opacity = "0";
+
+  setTimeout(function () {
+    results.textContent = message;
+    results.style.opacity = "1";
+  }, 300);
 }
