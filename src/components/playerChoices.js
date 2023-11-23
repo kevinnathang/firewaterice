@@ -3,10 +3,9 @@ import fireImg from "../assets/fire.jpg";
 import iceImg from "../assets/ice.jpg";
 
 export default function playerChoices(callback) {
-  const container = document.getElementById("container");
-  const imgHolder = document.createElement("div");
-  imgHolder.classList.add("imgHolder");
-  container.appendChild(imgHolder);
+  const playerChoiceContainer = document.getElementById(
+    "playerChoiceContainer"
+  );
 
   const water = new Image();
   water.classList.add("choices");
@@ -15,6 +14,9 @@ export default function playerChoices(callback) {
   water.addEventListener("click", function () {
     callback("water");
   });
+  const waterDiv = document.createElement("div");
+  waterDiv.appendChild(water);
+  playerChoiceContainer.appendChild(waterDiv);
 
   const fire = new Image();
   fire.classList.add("choices");
@@ -23,6 +25,9 @@ export default function playerChoices(callback) {
   fire.addEventListener("click", function () {
     callback("fire");
   });
+  const fireDiv = document.createElement("div");
+  fireDiv.appendChild(fire);
+  playerChoiceContainer.appendChild(fireDiv);
 
   const ice = new Image();
   ice.classList.add("choices");
@@ -31,8 +36,7 @@ export default function playerChoices(callback) {
   ice.addEventListener("click", function () {
     callback("ice");
   });
-
-  imgHolder.appendChild(water);
-  imgHolder.appendChild(fire);
-  imgHolder.appendChild(ice);
+  const iceDiv = document.createElement("div");
+  iceDiv.appendChild(ice);
+  playerChoiceContainer.appendChild(iceDiv);
 }

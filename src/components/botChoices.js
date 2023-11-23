@@ -3,29 +3,31 @@ import fireImg from "../assets/fire.jpg";
 import iceImg from "../assets/ice.jpg";
 
 function genBotPics() {
-  const container = document.getElementById("container");
-  const imgHolderBot = document.createElement("div");
-  imgHolderBot.classList.add("imgHolderBot");
-  container.appendChild(imgHolderBot);
+  const botChoiceContainer = document.getElementById("botChoiceContainer");
 
   const water = new Image();
   water.classList.add("choices");
   water.src = waterImg;
   water.id = "water";
+  const waterDiv = document.createElement("div");
+  waterDiv.appendChild(water);
+  botChoiceContainer.appendChild(waterDiv);
 
   const fire = new Image();
   fire.classList.add("choices");
   fire.src = fireImg;
   fire.id = "fire";
+  const fireDiv = document.createElement("div");
+  fireDiv.appendChild(fire);
+  botChoiceContainer.appendChild(fireDiv);
 
   const ice = new Image();
   ice.classList.add("choices");
   ice.src = iceImg;
   ice.id = "ice";
-
-  imgHolderBot.appendChild(water);
-  imgHolderBot.appendChild(fire);
-  imgHolderBot.appendChild(ice);
+  const iceDiv = document.createElement("div");
+  iceDiv.appendChild(ice);
+  botChoiceContainer.appendChild(iceDiv);
 }
 genBotPics();
 
@@ -33,6 +35,9 @@ export default function botChoices() {
   const fire = document.querySelector("#fire");
   const water = document.querySelector("#water");
   const ice = document.querySelector("#ice");
+  const botChoiceDisplay = document.getElementById("botChoiceDisplay");
+  const holder = document.createElement("div");
+  botChoiceDisplay.appendChild(holder);
 
   fire.style.borderColor = "black";
   water.style.borderColor = "black";

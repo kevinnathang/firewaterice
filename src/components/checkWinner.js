@@ -12,7 +12,7 @@ export default function checkWinner(playerChoice, cpuChoice) {
   } else if (outcomes[playerChoice].beats === cpuChoice) {
     const capitalizedPlayerChoice =
       playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
-    showResult(`You win! ${capitalizedPlayerChoice} beats ${cpuChoice}!`);
+    showResult(`You win!\n ${capitalizedPlayerChoice} beats ${cpuChoice}!`);
   } else {
     const capitalizedCpuChoice =
       cpuChoice.charAt(0).toUpperCase() + cpuChoice.slice(1);
