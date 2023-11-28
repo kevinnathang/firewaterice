@@ -25,10 +25,6 @@
   align-items: center;
 }
 
-* {
-  border: thin solid red;
-}
-
 .results {
   font-size: 50px;
   opacity: 0;

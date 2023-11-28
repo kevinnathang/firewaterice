@@ -48,10 +48,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.choices {
   align-items: center;
 }
 
-* {
-  border: thin solid red;
-}
-
 .results {
   font-size: 50px;
   opacity: 0;
@@ -61,7 +57,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.choices {
   margin-top: 20px;
   text-align: center;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;EACnB,0CAA0C;AAC5C;;AAEA;;;EAGE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,6BAA6B;EAC7B,YAAY;EACZ,YAAY;EACZ,gBAAgB;EAChB,kBAAkB;AACpB","sourcesContent":[".choices {\r\n  height: 100px;\r\n  width: 100px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n  transition: border-color 0.3s, filter 0.3s;\r\n}\r\n\r\n#waterPlayer:hover,\r\n#icePlayer:hover,\r\n#firePlayer:hover {\r\n  border-color: blue;\r\n  filter: brightness(70%);\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n  text-align: center;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n\r\n.results {\r\n  font-size: 50px;\r\n  opacity: 0;\r\n  transition: opacity 0.5s ease;\r\n  height: 70px;\r\n  width: 565px;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;EACnB,0CAA0C;AAC5C;;AAEA;;;EAGE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,6BAA6B;EAC7B,YAAY;EACZ,YAAY;EACZ,gBAAgB;EAChB,kBAAkB;AACpB","sourcesContent":[".choices {\r\n  height: 100px;\r\n  width: 100px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n  transition: border-color 0.3s, filter 0.3s;\r\n}\r\n\r\n#waterPlayer:hover,\r\n#icePlayer:hover,\r\n#firePlayer:hover {\r\n  border-color: blue;\r\n  filter: brightness(70%);\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n  text-align: center;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.results {\r\n  font-size: 50px;\r\n  opacity: 0;\r\n  transition: opacity 0.5s ease;\r\n  height: 70px;\r\n  width: 565px;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
