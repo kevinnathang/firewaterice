@@ -22,8 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.choices {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   border: thick solid black;
   margin: 40px;
   border-radius: 60px;
@@ -37,19 +37,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.choices {
   filter: brightness(70%);
 }
 
-#imgHolder {
-  display: flex;
-  align-items: flex-start;
-}
-
 .title {
   font-size: 80px;
+  text-align: center;
 }
 
 #container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -62,9 +57,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.choices {
   opacity: 0;
   transition: opacity 0.5s ease;
   height: 70px;
+  width: 565px;
   margin-top: 20px;
+  text-align: center;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;EACnB,0CAA0C;AAC5C;;AAEA;;;EAGE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,6BAA6B;EAC7B,YAAY;EACZ,gBAAgB;AAClB","sourcesContent":[".choices {\r\n  height: 200px;\r\n  width: 200px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n  transition: border-color 0.3s, filter 0.3s;\r\n}\r\n\r\n#waterPlayer:hover,\r\n#icePlayer:hover,\r\n#firePlayer:hover {\r\n  border-color: blue;\r\n  filter: brightness(70%);\r\n}\r\n\r\n#imgHolder {\r\n  display: flex;\r\n  align-items: flex-start;\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n\r\n.results {\r\n  font-size: 50px;\r\n  opacity: 0;\r\n  transition: opacity 0.5s ease;\r\n  height: 70px;\r\n  margin-top: 20px;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,YAAY;EACZ,mBAAmB;EACnB,0CAA0C;AAC5C;;AAEA;;;EAGE,kBAAkB;EAClB,uBAAuB;AACzB;;AAEA;EACE,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,6BAA6B;EAC7B,YAAY;EACZ,YAAY;EACZ,gBAAgB;EAChB,kBAAkB;AACpB","sourcesContent":[".choices {\r\n  height: 100px;\r\n  width: 100px;\r\n  border: thick solid black;\r\n  margin: 40px;\r\n  border-radius: 60px;\r\n  transition: border-color 0.3s, filter 0.3s;\r\n}\r\n\r\n#waterPlayer:hover,\r\n#icePlayer:hover,\r\n#firePlayer:hover {\r\n  border-color: blue;\r\n  filter: brightness(70%);\r\n}\r\n\r\n.title {\r\n  font-size: 80px;\r\n  text-align: center;\r\n}\r\n\r\n#container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n* {\r\n  border: thin solid red;\r\n}\r\n\r\n.results {\r\n  font-size: 50px;\r\n  opacity: 0;\r\n  transition: opacity 0.5s ease;\r\n  height: 70px;\r\n  width: 565px;\r\n  margin-top: 20px;\r\n  text-align: center;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -572,28 +569,30 @@ __webpack_require__.r(__webpack_exports__);
 
 function genBotPics() {
   const botChoiceContainer = document.getElementById("botChoiceContainer");
-  const imgHolderBot = document.createElement("div");
-  imgHolderBot.classList.add("imgHolderBot");
-  botChoiceContainer.appendChild(imgHolderBot);
 
   const water = new Image();
   water.classList.add("choices");
   water.src = _assets_water_jpg__WEBPACK_IMPORTED_MODULE_0__["default"];
   water.id = "water";
+  const waterDiv = document.createElement("div");
+  waterDiv.appendChild(water);
+  botChoiceContainer.appendChild(waterDiv);
 
   const fire = new Image();
   fire.classList.add("choices");
   fire.src = _assets_fire_jpg__WEBPACK_IMPORTED_MODULE_1__["default"];
   fire.id = "fire";
+  const fireDiv = document.createElement("div");
+  fireDiv.appendChild(fire);
+  botChoiceContainer.appendChild(fireDiv);
 
   const ice = new Image();
   ice.classList.add("choices");
   ice.src = _assets_ice_jpg__WEBPACK_IMPORTED_MODULE_2__["default"];
   ice.id = "ice";
-
-  imgHolderBot.appendChild(water);
-  imgHolderBot.appendChild(fire);
-  imgHolderBot.appendChild(ice);
+  const iceDiv = document.createElement("div");
+  iceDiv.appendChild(ice);
+  botChoiceContainer.appendChild(iceDiv);
 }
 genBotPics();
 
@@ -601,6 +600,9 @@ function botChoices() {
   const fire = document.querySelector("#fire");
   const water = document.querySelector("#water");
   const ice = document.querySelector("#ice");
+  const botChoiceDisplay = document.getElementById("botChoiceDisplay");
+  const holder = document.createElement("div");
+  botChoiceDisplay.appendChild(holder);
 
   fire.style.borderColor = "black";
   water.style.borderColor = "black";
@@ -646,7 +648,7 @@ function checkWinner(playerChoice, cpuChoice) {
   } else if (outcomes[playerChoice].beats === cpuChoice) {
     const capitalizedPlayerChoice =
       playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
-    showResult(`You win! ${capitalizedPlayerChoice} beats ${cpuChoice}!`);
+    showResult(`You win!\n ${capitalizedPlayerChoice} beats ${cpuChoice}!`);
   } else {
     const capitalizedCpuChoice =
       cpuChoice.charAt(0).toUpperCase() + cpuChoice.slice(1);
@@ -687,9 +689,6 @@ function playerChoices(callback) {
   const playerChoiceContainer = document.getElementById(
     "playerChoiceContainer"
   );
-  const imgHolder = document.createElement("div");
-  imgHolder.classList.add("imgHolder");
-  playerChoiceContainer.appendChild(imgHolder);
 
   const water = new Image();
   water.classList.add("choices");
@@ -698,6 +697,9 @@ function playerChoices(callback) {
   water.addEventListener("click", function () {
     callback("water");
   });
+  const waterDiv = document.createElement("div");
+  waterDiv.appendChild(water);
+  playerChoiceContainer.appendChild(waterDiv);
 
   const fire = new Image();
   fire.classList.add("choices");
@@ -706,6 +708,9 @@ function playerChoices(callback) {
   fire.addEventListener("click", function () {
     callback("fire");
   });
+  const fireDiv = document.createElement("div");
+  fireDiv.appendChild(fire);
+  playerChoiceContainer.appendChild(fireDiv);
 
   const ice = new Image();
   ice.classList.add("choices");
@@ -714,10 +719,9 @@ function playerChoices(callback) {
   ice.addEventListener("click", function () {
     callback("ice");
   });
-
-  imgHolder.appendChild(water);
-  imgHolder.appendChild(fire);
-  imgHolder.appendChild(ice);
+  const iceDiv = document.createElement("div");
+  iceDiv.appendChild(ice);
+  playerChoiceContainer.appendChild(iceDiv);
 }
 
 
